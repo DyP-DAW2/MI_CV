@@ -1,1 +1,269 @@
-¡Hola Mundo!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <script src="index.js"></script>
+    <style>
+        @font-face {
+            font-family: Calculator;
+            src: url(font/digital-7.ttf);
+        }
+        * {
+            font-size: 25px;
+            font-family: Calculator;
+            color: #080d09
+        } 
+        .boton {
+            margin-top:5px;
+            width: 55px;
+            height: 35px;
+            background-color: #2e2e2e;
+            color:#cdcdcd;
+            border-radius: 7px;
+            border: 3px solid #202020;
+            
+        }
+        .botonesAmarillos {
+            margin-top:5px;
+            width: 55px;
+            height: 35px;
+            background-color: #cea442;
+            color:#2e2e2e;
+            border-radius: 7px;
+            border: 3px solid #cea442;
+            
+        } 
+        .botonArriba {
+            margin-top:5px;
+            margin-right: 5.5px;
+            width: 40px;
+            height: 25px;
+            background-color: #323136;
+            color: #f3f3f3;
+            border-radius: 7px;
+            border: 2px solid #202020;
+            font-size: 12px;
+            padding-left: 6px;
+            
+        }
+        .botonesEspeciales {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 100%;
+            border-width: 8px;
+            height: 0px;
+            width: 0px;
+            background-color: black;
+        }
+        #pantalla {
+            width: 280px;
+            height: 80px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: right;
+            background-color: #d5e5da;
+            border-radius: 10px;
+            border: 10px inset black;
+            padding-right: 5px;
+            font-family: Calculator;
+            font-size: 50px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        #Calculadora {
+            border: 3px solid #272727;
+            border-width: 8px 2px 12px 2px;
+            border-radius: 20px;
+            width:310px;
+            margin: auto;
+            padding: 10px;
+            padding-left: 14px;
+            background-image: url("background.png");
+            background-repeat: repeat;
+            
+        }
+        #botonBorrar {
+            width:166px;
+            border-radius: 15px;
+            border: 3px solid rgb(72, 132, 139);
+            height: 80px;
+            background-color: #ccdbfd;
+        }
+        #firma {
+            width: 76px;
+            height: 56px;
+            overflow: hidden;
+            background: rgb(1,0,19);
+            background: radial-gradient(circle, rgb(59, 59, 59) 12%, rgba(30,30,36,1) 45%, rgba(1,0,19,1) 100%);
+            border-style:solid;
+            border-radius: 80px;
+            text-align: center;
+            float: none;
+            position:fixed
+        }
+        #trbButton {
+            border-top-right-radius: 20px;
+        }
+        #tlbButton {
+            border-top-left-radius: 20px;
+        }
+        #brbButton {
+            border-bottom-right-radius: 20px;
+        }
+        #blbButton {
+            border-bottom-left-radius: 20px;
+        }
+        .textoEspecial {
+            color:#cea442;
+            font-size: 10px;
+            margin-left: 12px;
+            margin-right: 10px;
+        }
+        
+        #separadoLabel, #separadoButton {
+            margin-left: 98px;
+        }
+        .dropbtn {
+            margin-top:5px;
+            margin-right: 5px;
+            width: 40px;
+            height: 25px;
+            background-color: #323136;
+            color: #f3f3f3;
+            border-radius: 7px;
+            border: 2px solid #202020;
+            font-size: 12px;
+            padding-left: 6px;
+      }
+
+      .dropbtn:active {
+        border-color: black;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown *:hover {
+        background-color: #ac0000;
+      }
+
+      .show {
+        display: block;
+      }
+      #myDropdown {
+        width: 243px;
+        height: 146px;
+        border: 2px solid #cea442;
+        border-radius: 7px;
+        overflow: hidden;
+      }
+      #hist1, #hist2, #hist3, #hist4, #hist5 {
+        border-style: solid 1px #cea442;
+        background-color: darkgray;
+        height: 31px;
+      }
+
+      #pantallaResultado {
+        grid-column: 1;
+        grid-row: 2/2;
+        text-align: right;
+        font-size: 40px;
+      }
+      #pantallaOperacion {
+        grid-column: 1;
+        grid-row: 1/2;
+        font-size: 30px;
+      }
+      #pantallaOperacion,#pantallaResultado {
+        height: 28px;
+        width: 98%;
+        background-color: rgba(0, 0, 0, 0);
+        border-style: none;
+        padding: 5px;
+      }
+
+
+    </style>
+</head>
+<body >
+    <div id="Calculadora">
+        <div id="content">
+            <div id="pantalla">
+                <input type="text" id="pantallaOperacion" disabled><br>
+                <input type="text" id="pantallaResultado" value="" disabled><br>
+            </div>
+
+            <label class="textoEspecial">Claro</label>
+            <label class="textoEspecial">Oscuro</label>
+            <input id="firma" value="PHR" disabled>
+            <label class="textoEspecial" id="separadoLabel">&nbsp;&nbsp;&nbsp;Off</label>
+            <label class="textoEspecial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On</label>
+
+            <input type="button" class="botonesEspeciales">
+            <input type="button" class="botonesEspeciales">
+            <input type="button" class="botonesEspeciales" id="separadoButton" onclick="btOff()">
+            <input type="button" class="botonesEspeciales" onclick="btOn()"><br><br>
+            
+            <input type="button" value="Hist" onclick="btHist()" class="dropbtn">
+            <div id="myDropdown" class="dropdown-content">
+            <input type="text" value="" id="hist1" disabled/>
+            <input type="text" value="" id="hist2" disabled/>
+            <input type="text" value="" id="hist3" disabled/>
+            <input type="text" value="" id="hist4" disabled/>
+            <input type="text" value="" id="hist5" disabled/>
+            <a></a>
+            </div>
+            
+            
+            <input type="button" value="M+" onclick="btEl()"  class="botonArriba">
+            <input type="button" value="M-" onclick="btEl()" class="botonArriba">
+            <input type="button" value="Mr" onclick="btEl()" class="botonArriba">
+            <input type="button" value="x^" onclick="btEl()" class="botonArriba">
+            <input type="button" value="√x" onclick="btRa()" class="botonArriba"><br>
+            <br><br>
+            <input type="button" value="7" onclick="btNum(7)" class="boton" id="tlbButton">
+            <input type="button" value="8" onclick="btNum(8)" class="boton">
+            <input type="button" value="9" onclick="btNum(9)" class="boton">
+            <input type="button" value="DEL" onclick="btBo()" id="theInput" class="botonesAmarillos">
+            <input type="button" value="AC" onclick="btC()" class="botonesAmarillos" id="trbButton">
+            <input type="button" value="4" onclick="btNum(4)" class="boton">
+            <input type="button" value="5" onclick="btNum(5)" class="boton">
+            <input type="button" value="6" onclick="btNum(6)" class="boton">
+            <input type="button" value="*" onclick="btPo()" class="boton">
+            <input type="button" value="/" onclick="btDi()" class="boton">
+            <input type="button" value="1" onclick="btNum(1)" class="boton">
+            <input type="button" value="2" onclick="btNum(2)" class="boton">
+            <input type="button" value="3" onclick="btNum(3)" class="boton">
+            <input type="button" value="+" onclick="btMa()" class="boton">
+            <input type="button" value="-" onclick="btMe()" class="boton">
+            <input type="button" value="0" onclick="btNum(0)" class="boton" id="blbButton">
+            <input type="button" value="." onclick="btPu()" class="boton">
+            <input type="button" value="=" onclick="btIg()" class="boton">
+            <input type="button" value="ANS" onclick="btANS()" class="boton">
+            <input type="button" value="*10^" onclick="btDE()" class="boton" id="brbButton">
+        </div>
+    </div>
+    
+</body>
+</html>
