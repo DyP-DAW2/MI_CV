@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+body{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #D7F2BA;
+}
+
+#formulario{
+    background-color: #89cff0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: -10px 10px ;
+}
+
+#formulario > form > h2{
+    margin-bottom: 20px;
+}
+
+#nombreSeleccionado{
+    background-color: #BDE4A8;
+    border: none;
+    border-radius: 20px;
+}
+
+#enviar{
+    background-color: #BDE4A8;
+    font-weight: bold;
+    float: right;
+    border-radius: 20px;
+    padding: 1px;
+}

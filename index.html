@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <script src="./index.js"></script>
     <title>Entrada</title>
 </head>
 <body>
-    <p>Hola Mundos</p>
+    <div id="contenido">
+        <div id="formulario">
+            <form>
+                <h2>Seleccione el curriculum que desea consultar: </h2>
+                <select id="nombreSeleccionado">
+                    <option>David</option>
+                    <option>Pablo</option>
+                </select>
+                <input id="enviar" type="button" onclick="redirigir()" value="Consultar">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
